@@ -6,6 +6,33 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>이것은 테스트입니다.</h1>  
+  <div id="root">
+    <ul>
+      <li data-lis="0">1번</li>
+      <li data-lis="1">2번</li>
+      <li data-lis="2">3번</li>
+    </ul>
+
+    <script>
+
+      const root = document.getElementById("root")
+      const ul = document.children[0]
+      console.log(ul)
+
+      ul.addEventListener("click", (event) => {
+
+        let datasetTarget = event.target.dataset.lis;
+        if( datasetTarget === "1") {
+          event.target.style.color = "blue";
+        } else {
+          console.dir(event.target);
+          console.dir("DOM API Event 라는 객체 :", event);
+          event.target.style.color = "red";
+        }
+
+      });
+
+    </script>
+  </div>
 </body>
 </html>
